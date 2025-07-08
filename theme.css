@@ -1,0 +1,347 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 6.5rem;
+}
+
+ul {
+    margin-right: 1rem;
+}
+
+ul a {
+    /*   color: white; */
+    text-decoration: none;
+    margin-right: 3.5rem;
+    /*   border: solid 1px red; */
+    font-size: 2.3rem;
+    font-weight: 600;
+    display: block;
+    transition: transform 0.3s ease-out, color 0.3s ease-out, border-bottom 0.3s ease-out;
+    color: #d4d4dc;
+    border-bottom: solid 1px #feda6a;
+}
+
+@media(min-width: 799px) {
+    ul a {
+        margin-right: 8rem;
+    }
+}
+
+ul a:hover,
+ul a:active {
+    color: #feda6a;
+    border-bottom: none;
+}
+
+ul a:hover,
+ul a:focus {
+    transform: scale(1.1, 1.1) translateY(-0.3rem);
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+#welcome-section {
+    font-family: 'Redressed', cursive;
+    /*   background-color: grey; */
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    font-size: 3.5rem;
+    /*   background-color: rgb(29,30,34); */
+    background-color: rgb(29, 30, 34);
+    background-image: linear-gradient(transparent, rgba(29, 30, 34, 0.9)), url(https://www.americaspace.com/wp-content/uploads/2016/08/115burbank.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 480px) {
+    #welcome-section {
+        background-image: linear-gradient(transparent, rgba(29, 30, 34, 0.5)), url(https://www.nasa.gov/images/content/143114main_sts114armwalk-lg.jpg);
+    }
+}
+
+#welcome-section h1,
+#welcome-section p {
+    padding: 0 1rem;
+    color: #feda6a;
+    background-image: linear-gradient(rgba(29, 30, 34, 0.1), rgba(29, 30, 34, 0.9));
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#welcome-section h1 {
+    margin-bottom: 0;
+}
+
+#welcome-section p {
+    margin-top: 0;
+    color: #d4d4dc;
+}
+
+#projects {
+    /*   background-color: black; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem 10rem;
+    padding: 8rem 10rem 10rem;
+    background-color: #393f4d;
+}
+
+@media (max-width: 920px) {
+    #projects {
+        gap: 5rem 6rem;
+    }
+}
+
+#projects>p {
+    /*   color: white; */
+    font-size: 4rem;
+    font-weight: 600;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: center;
+    margin: 0;
+    color: #d4d4dc;
+    border-bottom: solid 1px #feda6a;
+}
+
+img {
+    width: 100%;
+}
+
+#projects a {
+    text-decoration: none;
+    color: black;
+    font-size: 2.2rem;
+    box-shadow: 1px 1px 2px rgb(254, 218, 106, .6);
+    line-height: 0;
+    position: relative;
+}
+
+@media (max-width: 799px) {
+    html {
+        font-size: 58.5%;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    ul {
+        margin: 0;
+    }
+
+    ul a {
+        padding-right: 0;
+        margin: 0 3rem 0 3rem;
+    }
+
+    #projects {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #projects a {
+        margin-bottom: 6rem;
+    }
+
+}
+
+@media (max-width: 541px) {
+    html {
+        font-size: 50.5%;
+    }
+
+    #projects {
+        padding: 8rem 5rem 10rem;
+    }
+}
+
+.project-title {
+    z-index: 1000;
+    opacity: 1;
+}
+
+a div {
+    position: absolute;
+    z-index: 10;
+    background-color: grey;
+    width: 100%;
+    text-align: center;
+    padding: 1.3rem;
+    line-height: normal;
+    transition: color .4s ease-out, top .4s ease-out, background .4s ease-out;
+    background: rgba(128, 128, 128, 0.6);
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects .fas {
+    color: rgba(128, 128, 128, 0);
+    transition: color .7s ease-out;
+}
+
+#projects a:hover .fas,
+a:hover div,
+#projects a:focus .fas,
+a:focus div {
+    color: white;
+    top: 80%;
+}
+
+@media (max-width: 1025px) {
+
+    #projects a .fas,
+    a div {
+        top: 80%;
+    }
+
+    a div {
+        background: rgba(0, 0, 0, 0.9);
+        /*     color: white; */
+        color: #d4d4dc;
+        transition: none;
+    }
+
+    #projects a .fas {
+        color: white;
+        transition: none;
+    }
+
+    a:hover div,
+    a:focus div,
+    a:active div {
+        color: #feda6a;
+    }
+}
+
+@media (max-width: 336px) {
+
+    #projects a:hover .fas,
+    a:hover div,
+    #projects a:focus .fas,
+    a:focus div {
+        top: 68%;
+    }
+}
+
+a:hover div,
+a:focus div {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#contact {
+    font-family: 'Redressed', cursive;
+    /*   background-color: #f0f0f0; */
+    text-align: center;
+    padding: 7rem 3rem 14rem 3rem;
+    background: #d4d4dc;
+}
+
+h2 {
+    font-size: 6rem;
+}
+
+#contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+#contact a {
+    text-decoration: none;
+    color: black;
+    margin: 1.5rem 2.5rem;
+    font-size: 3rem;
+    transition: transform 0.2s ease-out;
+}
+
+#contact a:hover,
+#contact a:focus,
+#contact a:active {
+    transform: translateY(0.7rem);
+}
+
+#contact .fa-facebook-square {
+    color: #3A559F;
+}
+
+#contact .fa-twitter-square {
+    color: #00A2F3;
+}
+
+#contact .fa-github-square {
+    color: black;
+}
+
+#contact .fa-free-code-camp {
+    color: black;
+}
+
+#contact .fa-envelope-square {
+    color: #EA4335;
+}
+
+#contact .fa-phone-square-alt {
+    color: green;
+}
+
+footer {
+    font-family: 'Raleway', sans-serif;
+    background-color: black;
+    /*   color: white; */
+    text-align: center;
+    padding: 1rem;
+    color: #d4d4dc;
+}
+
+footer p {
+    font-style: italic;
+    font-family: 'Redressed', cursive;
+    font-size: 2.5rem;
+    color: #feda6a;
+}
+
+footer span {
+    font-size: 1.6rem;
+}
